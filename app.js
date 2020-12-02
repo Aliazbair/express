@@ -29,6 +29,7 @@ app.use('/', require('./routes/index'))
 app.use('/api/v1/transction', require('./routes/transction'))
 app.use('/api/v1/products', require('./router/products'))
 app.use('/api/v1/orders', require('./router/orders'))
+app.use('/api/v1/user', require('./router/user'))
 
 // handlebars
 app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))

@@ -1,4 +1,6 @@
 const router = require('express').Router()
+const uploadMulter= require('../middleware/upload')
+const validation= require('../middleware/validation')
 const {
   allProducts,
   getProducts,
@@ -7,7 +9,7 @@ const {
   deleteProducts,
 } = require('../controller/products')
 
-router.route('/').get(allProducts).post(addProducts)
+router.route('/').get(allProducts).post(uploadMulter,validation,addProducts)
 router
   .route('/:id')
   .get(getProducts)

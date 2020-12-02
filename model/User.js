@@ -11,14 +11,26 @@ const userSshema = new mongoose.Sshema({
   emial: {
     type: String,
     required: true,
-    max: 255,
-    min: 6,
+    unique: true,
   },
   password: {
     type: String,
     required: true,
     max: 1662,
     min: 6,
+  },
+  avatar: {
+    // user image
+    type: String,
+  },
+  role: {
+    // role of user it will be (normal or admin)
+    type: Number,
+    default: 0,
+  },
+  history: {
+    type: Array,
+    default: [],
   },
   date: {
     type: Date,
